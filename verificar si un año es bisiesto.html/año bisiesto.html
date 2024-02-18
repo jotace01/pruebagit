@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Verificar si un año es bisiesto</title>
+    <style>
+		body {
+      font-size: 22px;
+			background-color: rgb(130, 238, 139);
+      text-align: center;
+		}
+
+    h1 {
+      text-align: center;
+    }
+
+    p {
+      color: black;
+    }
+	</style>
+  </head>
+
+
+  <body>
+    <h1>consulta cual año es bisiesto</h1>
+    <p>Por favor seleccione una fecha a consultar:</p>
+    <input type="date" id="fecha" name="fecha" value="">
+    <br><br>
+    <button onclick="verificar()">Verificar</button>
+    <button onclick="limpiar()">Limpiar</button>
+    <p id="mensaje"></p>
+    <script>
+      // Establecer la fecha actual como valor predeterminado del campo de entrada de fecha
+      var fechaActual = new Date();
+      var fecha = fechaActual.getFullYear() + '-' + ('0' + (fechaActual.getMonth() + 1)).slice(-2) + '-' + ('0' + fechaActual.getDate()).slice(-2);
+      document.getElementById("fecha").value = fecha;
+
+      function verificar() {
+        // Obtener el año ingresado por el usuario
+        var anio = new Date(document.getElementById("fecha").value).getFullYear();
+
+        // Verificar si el año es bisiesto
+        if ((anio % 4 == 0 && anio % 100 != 0) || anio % 400 == 0) {
+          mensaje.innerHTML = anio + " SI ES UN AÑO BISIESTO.";
+          mensaje.style.color = "green";
+        } else {
+          mensaje.innerHTML = anio + " NO ES UN AÑO BISIESTO.";
+          mensaje.style.color = "red";
+        }
+      }
+
+      function limpiar() {
+        document.getElementById("fecha").value = "";
+        document.getElementById("mensaje").innerHTML = "";
+      }
+      
+      function verificar() {
+  // Obtener el año ingresado por el usuario
+  var anio = new Date(document.getElementById("fecha").value).getFullYear();
+
+  // Verificar si el año es bisiesto
+  if ((anio % 4 == 0 && anio % 100 != 0) || anio % 400 == 0) {
+    // Mostrar mensaje con adornos de fiesta
+    mensaje.innerHTML = "<span style='color: red; font-size: 20px; font-weight: bold; text-align: center;'>¡" + anio + " 🎉🎉🎉ES UN AÑO 🎉🎉🎉 BISIESTO! 🎉🎉🎉</span>";
+    
+  } else {
+    // Mostrar mensaje sin adornos
+    mensaje.innerHTML = anio + " NO ES UN AÑO BISIESTO.";
+    document.body.style.backgroundImage = "none";
+  }
+}
+
+    </script>
+  </body>
+</html>

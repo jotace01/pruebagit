@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang ="es">
+
+    <head>
+        <meta charset="UTF-8">      
+        <title>Recibo de Compra</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+                
+    <style>       
+        table, th, td {
+          border: 1.5px solid black;
+          border-collapse: collapse;
+        }
+
+        th, td {
+          padding: 5px;
+          text-align: left;
+        }
+
+        
+    </style>
+
+          <h1>Factura de Compra</h1>
+
+    </head>
+
+<body>
+    
+  <div id="root"></div>
+  <script src="https://unpkg.com/react/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone/babel.min.js"></script>
+  <script type="text/babel"></script>
+    
+<table style="width:50%">
+    <tr>
+        <th>Nombre Del Almacen:</th>
+            <td>Feria Artesanal El Fondo Del Exito local 51</td>
+    </tr>
+
+    <tr>
+        <th>Fecha:</th>
+        
+        <td>
+          <label for="fecha">Fecha:</label>
+          <input type="date" id="fecha" name="fecha">
+        </td>
+
+    </tr>
+
+    <tr>
+        <th>Direccion del Establecimiento</th>
+        <td>calle 162a 8-15</td>
+        
+    </tr>
+  
+  </table>
+
+<br><br>
+
+<h2>Datos Personales</h2>
+
+
+  <script> 
+
+    var nombreCliente ;
+    var idCliente;
+    var direccionCliente; 
+    var telefonoCliente;
+    var correoElectronico;
+    var nombreProducto;
+    var precio;
+    var cantidad;
+    var total;
+    var subtotal;
+    var p=0;
+    var iva;
+    var subtotalP=0;
+    var fecha= new Date();
+    var imprimir;
+    var numero_Factura=0;
+
+  function mostrar(){
+
+    swal('titulo')
+  }  
+  
+  function generarFactura(){
+    
+    nombreCliente=document.getElementById("nombreCliente").value;
+    idCliente=document.getElementById("idCliente").value;
+    direccionCliente=document.getElementById("direccionCliente").value;
+    telefonoCliente=document.getElementById("telefonoCliente").value;
+    correoElectronico=document.getElementById("correoElectronico").value;
+  
+    document.write(fecha.getDate() + "/" + (fecha.getMonth()+1) + "/" + fecha.getFullYear()+"</br>"+"</br>"+"</br>");
+    document.write("Número de Factura: " + (++numero_Factura) + "<br><br>");
+    document.write("Nombre del Cliente:"+'&nbsp;'+nombreCliente+"<br>"+"<br>");
+    document.write("Identificacion del Cliente:"+'&nbsp;'+idCliente+"<br>"+"<br>");       
+    document.write("Direccion:"+'&nbsp;'+direccionCliente+"<br>"+"<br>");
+    document.write("Telefono:"+'&nbsp;'+telefonoCliente+"<br>"+"<br>");
+    document.write("correo Electronico:"+'&nbsp;'+correoElectronico+"<br>"+"<br>"+"<br>"+"<br>");
+    
+    
+  for (subtotal=0; nombreProducto != "*"; subtotal++) {
+  
+  
+  nombreProducto=prompt('INGRESE NOMBRE DEL PRODUCTO');
+  document.write("Nombre Producto:  "+'&nbsp;'+nombreProducto+'&nbsp;'+'&nbsp;');
+  
+  cantidad=parseInt(prompt('INGRESE CANTIDAD DE PRODUCTOS'));
+  document.write("Cantidad:  "+'&nbsp;'+cantidad+'&nbsp;'+'&nbsp;');
+
+  precio=parseFloat(prompt('INGRESE VALOR DE PRODUCTOS POR UNIDAD'));
+  document.write("Precio:  "+'&nbsp;'+precio+'&nbsp;'+'&nbsp;');
+  
+  nombreProducto=prompt('Ingrese "*" Para terminar o cualquier tecla para continuar');
+  
+  
+    subtotal=precio*cantidad;
+    subtotalP=subtotalP+parseInt(subtotal);
+    iva=subtotalP*0.19;
+    total=subtotalP+iva;
+    
+  
+    document.write("SubTotal :"+'&nbsp;'+subtotal+"<br>"+"<br>"+"<br>");
+    
+  } 
+
+  document.write("Subtotal : "+'&nbsp;'+subtotalP+"<br>"+"<br>");
+  document.write("Iva 19% :"+'&nbsp;'+iva+"<br>"+"<br>");
+  document.write("Total :"+'&nbsp;'+total+"<br>"+"<br>");
+  document.write('<button onclick="window.print()">Imprimir Factura</button>');
+  
+  }
+  
+  generarFactura()
+
+</script>
+
+    Nombre Cliente <br><input type="text" name="nombreCliente" id="nombreCliente"/><br><br>
+    Numero Id <br><input type="text" name="idCliente" id="idCliente"/><br><br>
+    Direccion <br><input type="text" name="direccionCliente" id="direccionCliente"/><br><br>
+    Telefono <br><input type="text" name="telefonoCliente" id="telefonoCliente"/><br><br>
+    correo Electronico <br><input type="text" name="correoElectronico" id="correoElectronico"/><br><br>
+
+   <input type="button"  name="Continuar" onclick="generarFactura()"   value="Continuar"/>
+
+   
+</body>
+
+
+</html>
+
+

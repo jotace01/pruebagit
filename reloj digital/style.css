@@ -1,0 +1,198 @@
+*{
+    padding: 22px;
+    margin: 5px;
+    box-sizing: border-box;
+   
+}
+body {
+    display: flex;
+    justify-content: absolute;;
+    min-width: 10em;
+    width: 100px;
+    height: 100px;
+    background: black;
+    background: radial-gradient(ellipse at center,white);
+    
+}
+
+.load {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, transparent,transparent 75%, rgb(255, 4, 4));
+    animation: animate 1s linear infinite;
+   
+
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0);
+        filter: hue-rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+        filter: hue-rotate(90deg);
+    }
+}
+
+.load:before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 0px;
+    right: 5px;
+    bottom: 5px;
+    background:black;
+    border-radius: 50%;
+    z-index: 1000;
+}
+
+.load:after {
+    content: '';
+    position: absolute;
+    top: 100;
+    left: 100;
+    right: 00;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, transparent 40%, rgb(255, 23, 2));
+    border-radius: 50%;
+    z-index: 1000;
+    z-index: 1;
+    filter: blur(20px);
+}
+
+
+.loader-container {
+    position: relative;
+    width: 6px;
+    height: 60px;
+    margin: 110px;
+    
+  
+     
+}
+
+.loader-container .loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 140%;
+    height: 140%;
+    border: solid 4px transparent;
+    border-top-color: red;
+    border-left-color: red;
+    border-radius: 50%;
+    animation: loader 1s linear infinite;
+}
+
+.loader-container .loader2 {
+    position: absolute;
+    top: 74%;
+    left: 74%;
+    width: 70%;
+    height: 70%;
+    border: solid 4px transparent;
+    border-top-color: blue;
+    border-left-color: blue;
+    border-radius: 50%;
+    animation: loader2 1s linear infinite;
+
+}
+
+.loader-container .loader3 {
+    position: absolute;
+    top: 0.8%;
+    left: 0.8%;
+    width: 178%;
+    height: 178%;
+    border: solid 4px transparent;
+    border-top-color:green;
+    border-left-color: green;
+    border-radius: 50%;
+    animation: loader3 1s linear infinite;
+
+}
+
+@keyframes loader {
+    0%{
+        transform: translate(-150%, -150%)rotate(0deg);
+    }
+    100% {
+        transform: translate(-150%, -150%) rotate(-360deg)
+    }
+}
+
+@keyframes loader2 {
+    0%{
+        transform: translate(-195%, -195%)rotate(0deg);
+    }
+    100% {
+        transform: translate(-195%, -195%) rotate(360deg)
+    }
+}
+
+@keyframes loader3 {
+    0%{
+        transform: translate(-100%, -100%)rotate(0deg);
+    }
+    100% {
+        transform: translate(-100%, -100%) rotate(360deg)
+    }
+}
+
+p {
+    margin: 0%;
+    padding: 10%;
+}
+
+.reloj {
+    font-family: 'share tech Mono', monospace;
+    color: #ffffff;
+    position: absolute;
+    left: 14%;
+    top: 10.5%;
+    text-align: center;
+    transform: translate(-50%,-50%);
+    text-shadow: 0 0 20px rgb(3, 253, 45);
+}
+.tiempo {
+    letter-spacing: 0.05em;
+    font-size: 50px;
+    padding: 5px;
+    position: right;
+    
+}
+
+.fecha {
+    letter-spacing: 0.1em;
+    font-size: 24px;
+    padding: 5px;
+    position: right;
+}
+
+.main {
+    background-image:  url(https://www.teahub.io/photos/full/5-50867_fondos-de-pantalla-pc-4k-gamer.jpg);
+    width: 95%;
+    height: 545px;
+    position: absolute;
+    background-position: 219%;
+    background-size: 212%; 
+    align-items: center; 
+
+    
+    
+}
+
+
+.time {
+     width: 10px;
+     height: 10px;
+     position: absolute;
+
+}
+
+
+
+

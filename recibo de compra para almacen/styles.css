@@ -1,0 +1,44 @@
+* {
+    margin:0;
+    padding:0;
+    }
+
+    body{
+     /* color del fondo */
+    background-color:#293146 ;
+    display:flex;
+    /* centrar horizontalmente*/
+    justify-content:center;
+     /*centrar verticalmente */
+     align-items: center;
+    }
+    
+    button {
+        background-color: blue;
+        color: aqua;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+
+    }
+
+    .mi-div { 
+        width: 50%;
+        height: 8vh;
+        font-size: 7vw;
+        text-align: center;
+        border: 0.1em solid white;
+        outline: none;
+        caret-color: white;
+        color: whtie;
+        background-color: transparent; 
+
+    }
+
+    .mi-div imput[type="text"]::placeholder {
+        color: rgba (255, 255, 255, 0.5);
+    }
+
+    
+    
+        
